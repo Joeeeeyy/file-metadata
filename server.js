@@ -18,7 +18,10 @@ app.listen(port, function () {
 });
 
 app.post('/api/fileanalyze', multer().single('upfile'), (req, res) => {
-  console.log(request.file)
+  let fileData = {};
+  fileData['name'] = req.file.originalname;
+  fileData['type'] = req.file.mimetype;
+  fileData['size'] = req.file.size;
 
-  res.json({})
-})
+  res.json(fileData);
+});
