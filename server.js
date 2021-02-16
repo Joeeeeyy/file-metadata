@@ -18,7 +18,7 @@ app.listen(port, function () {
 });
 
 app.post('/api/fileanalyze', multer().single('upfile'), (req, res) => {
-  console.log(req.file)
-  
-  res.json({});
+  console.log(request.file)
+
+  res.json({})
 })
